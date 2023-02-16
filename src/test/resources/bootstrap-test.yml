@@ -1,7 +1,7 @@
 micronaut:
   application:
     default-charset: UTF-8
-    name: test-pcc-puppet-enforcer-realm
+    name: test-pcc-puppet-collection-guru
   config-client:
     enabled: false
   otel:

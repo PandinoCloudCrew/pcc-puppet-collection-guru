@@ -1,6 +1,6 @@
 micronaut:
   application:
-    name: test-pcc-puppet-enforcer-realm
+    name: test-pcc-puppet-collection-guru
   server:
     port: ${random.port}
     netty:

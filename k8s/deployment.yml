@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pcc-puppet-enforcer-realm-deployment
+  name: pcc-puppet-collection-guru-deployment
   namespace: pcc-puppet-enforcer
   labels:
-    app: pcc-puppet-enforcer-realm-deployment
+    app: pcc-puppet-collection-guru-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: pcc-puppet-enforcer-realm-deployment
+      app: pcc-puppet-collection-guru-deployment
   template:
     metadata:
-      name: pcc-puppet-enforcer-realm-deployment
+      name: pcc-puppet-collection-guru-deployment
       labels:
-        app: pcc-puppet-enforcer-realm-deployment
+        app: pcc-puppet-collection-guru-deployment
       annotations:
         linkerd.io/inject: enabled
     spec:
@@ -22,8 +22,8 @@ spec:
       imagePullSecrets:
         - name: pcc-registry
       containers:
-        - name: pcc-puppet-enforcer-realm-container
-          image: ghcr.io/pcc-puppet-enforcer/pcc-puppet-enforcer-realm:latest
+        - name: pcc-puppet-collection-guru-container
+          image: ghcr.io/pcc-puppet-enforcer/pcc-puppet-collection-guru:latest
           imagePullPolicy: Always
           env:
             - name: MICRONAUT_ENVIRONMENTS

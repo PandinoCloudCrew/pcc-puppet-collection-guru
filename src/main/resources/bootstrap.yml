@@ -1,6 +1,6 @@
 micronaut:
   application:
-    name: pcc-puppet-enforcer-realm
+    name: pcc-puppet-collection-guru
   config-client:
     enabled: true
 

@@ -82,7 +82,7 @@ java {
 
 def details = versionDetails()
 def dockerLabels = [
-        "org.opencontainers.image.source": "https://github.com/PandinoCloudCrew/pcc-puppet-enforcer-realm",
+        "org.opencontainers.image.source": "https://github.com/PandinoCloudCrew/pcc-puppet-collection-guru",
         "org.opencontainers.image.version": "$project.version",
         "org.opencontainers.image.revision": details.gitHash,
         "org.opencontainers.image.vendor": "PandinoCloudCrew",
