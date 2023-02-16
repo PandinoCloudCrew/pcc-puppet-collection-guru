@@ -19,6 +19,8 @@ import java.util.UUID;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import pcc.puppet.guru.password.PassaySecurePasswordGenerator;
+import pcc.puppet.guru.password.SecurePasswordGenerator;
 
 class PassaySecurePasswordGeneratorTest {
 
