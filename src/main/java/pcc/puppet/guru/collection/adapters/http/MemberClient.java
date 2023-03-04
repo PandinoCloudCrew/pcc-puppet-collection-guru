@@ -30,10 +30,10 @@ import io.micronaut.http.annotation.QueryValue;
 import io.micronaut.http.client.annotation.Client;
 import io.micronaut.tracing.annotation.SpanTag;
 import javax.validation.Valid;
-import pcc.puppet.guru.collection.adapters.http.response.entity.MemberResponse;
+import pcc.puppet.guru.app.Project;
 import pcc.puppet.guru.collection.adapters.http.request.MemberCreateRequest;
 import pcc.puppet.guru.collection.adapters.http.response.action.MemberCreateResponse;
-import pcc.puppet.guru.app.Project;
+import pcc.puppet.guru.collection.adapters.http.response.entity.MemberResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

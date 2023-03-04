@@ -21,7 +21,7 @@ import net.datafaker.Faker;
 import uk.co.jemos.podam.common.AttributeStrategy;
 
 public class LocaleStrategy implements AttributeStrategy<String> {
-  private final Faker faker = new Faker();
+  private static final Faker faker = new Faker();
 
   @Override
   public String getValue(Class<?> attrType, List<Annotation> attrAnnotations) {

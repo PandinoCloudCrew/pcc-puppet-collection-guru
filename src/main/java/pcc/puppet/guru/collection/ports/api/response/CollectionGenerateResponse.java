@@ -13,18 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package pcc.puppet.guru.generator.values;
+package pcc.puppet.guru.collection.ports.api.response;
 
-import java.lang.annotation.Annotation;
-import java.util.List;
-import net.datafaker.Faker;
-import uk.co.jemos.podam.common.AttributeStrategy;
+import io.micronaut.core.annotation.Introspected;
+import java.time.Instant;
+import java.util.Map;
+import lombok.Builder;
+import lombok.Data;
+import lombok.extern.jackson.Jacksonized;
+import pcc.puppet.guru.collection.domain.MessageStatus;
+import pcc.puppet.guru.collection.domain.RecordProcessingTime;
 
-public class PhoneNumberStrategy implements AttributeStrategy<String> {
-  private static final Faker faker = new Faker();
+@Data
+@Builder
+@Jacksonized
+@Introspected
+public class CollectionGenerateResponse {
 
-  @Override
-  public String getValue(Class<?> attrType, List<Annotation> attrAnnotations) {
-    return faker.phoneNumber().cellPhone();
-  }
+  private String id;
+  private String subject;
+  private int size;
+  private String owner;
+  private Instant requestTime;
 }

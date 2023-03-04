@@ -40,14 +40,13 @@ dependencies {
     implementation("io.micronaut.cache:micronaut-cache-caffeine")
     implementation("io.micronaut.flyway:micronaut-flyway")
     implementation("io.micronaut.discovery:micronaut-discovery-client")
-    implementation("io.micronaut.data:micronaut-data-r2dbc")
-    implementation("io.r2dbc:r2dbc-pool:$r2dbcPoolVersion")
     implementation("jakarta.annotation:jakarta.annotation-api")
     implementation("io.micronaut.problem:micronaut-problem-json")
     implementation("io.micronaut.reactor:micronaut-reactor")
     implementation("io.micronaut.reactor:micronaut-reactor-http-client")
     implementation("com.github.0xshamil:java-xid:1.0.0")
     implementation("io.micronaut:micronaut-http-client")
+    implementation("io.micronaut.jms:micronaut-jms-activemq-artemis")
     implementation("io.micronaut:micronaut-jackson-databind")
     implementation("io.micronaut.security:micronaut-security")
     implementation("io.micronaut.security:micronaut-security-jwt")
@@ -59,15 +58,12 @@ dependencies {
     implementation("net.datafaker:datafaker:$datafakerVersion")
     implementation("uk.co.jemos.podam:podam:$podamVersion")
     runtimeOnly("ch.qos.logback:logback-classic")
-    runtimeOnly("org.postgresql:postgresql")
-    runtimeOnly("org.postgresql:r2dbc-postgresql")
     compileOnly("org.projectlombok:lombok")
     compileOnly("org.graalvm.nativeimage:svm")
 
     testImplementation("org.mockito:mockito-core")
     testImplementation("org.awaitility:awaitility:$awaitilityVersion")
     runtimeOnly("com.h2database:h2")
-    runtimeOnly("io.r2dbc:r2dbc-h2")
 
 }
 
@@ -181,6 +177,7 @@ blossom {
     def constants = "src/main/java/pcc/puppet/enforcer/app/Project.java"
     replaceToken("@VERSION@", project.version, constants)
     replaceToken("@NAME@", project.name, constants)
+    replaceToken("@SHCEMAS@", "${System.env.SCHEMAS_SERVICE ?: 'https://schemas.ops.pandino.co'}", constants)
     def resources = "src/main/resources/application.yml"
     replaceToken("@VERSION@", project.version, resources)
     replaceToken("@NAME@", project.name, resources)

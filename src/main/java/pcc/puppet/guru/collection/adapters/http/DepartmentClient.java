@@ -30,8 +30,8 @@ import io.micronaut.tracing.annotation.SpanTag;
 import javax.validation.Valid;
 import pcc.puppet.guru.app.Project;
 import pcc.puppet.guru.collection.adapters.http.request.DepartmentCreateRequest;
-import pcc.puppet.guru.collection.adapters.http.response.entity.DepartmentResponse;
 import pcc.puppet.guru.collection.adapters.http.response.action.DepartmentCreateResponse;
+import pcc.puppet.guru.collection.adapters.http.response.entity.DepartmentResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

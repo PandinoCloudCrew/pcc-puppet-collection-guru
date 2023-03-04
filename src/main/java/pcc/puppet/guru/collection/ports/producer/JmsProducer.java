@@ -13,18 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package pcc.puppet.guru.generator.values;
+package pcc.puppet.guru.collection.ports.producer;
 
-import java.lang.annotation.Annotation;
-import java.util.List;
-import net.datafaker.Faker;
-import uk.co.jemos.podam.common.AttributeStrategy;
+import static io.micronaut.jms.activemq.artemis.configuration.ActiveMqArtemisConfiguration.CONNECTION_FACTORY_BEAN_NAME;
 
-public class PhoneNumberStrategy implements AttributeStrategy<String> {
-  private static final Faker faker = new Faker();
+import io.micronaut.jms.annotations.JMSProducer;
+import io.micronaut.jms.annotations.Queue;
+import io.micronaut.messaging.annotation.MessageBody;
+import pcc.puppet.guru.collection.ports.command.CollectionGenerateCommand;
 
-  @Override
-  public String getValue(Class<?> attrType, List<Annotation> attrAnnotations) {
-    return faker.phoneNumber().cellPhone();
-  }
+@JMSProducer(CONNECTION_FACTORY_BEAN_NAME)
+public interface JmsProducer {
+
+  @Queue(CollectionGenerateProducer.DESTINATION)
+  void send(@MessageBody CollectionGenerateCommand body);
 }
