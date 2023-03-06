@@ -19,10 +19,12 @@ import io.micronaut.core.annotation.Introspected;
 import io.micronaut.http.MediaType;
 import java.time.Instant;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 @Getter
+@Setter
 @SuperBuilder
 @Introspected
 @ToString
