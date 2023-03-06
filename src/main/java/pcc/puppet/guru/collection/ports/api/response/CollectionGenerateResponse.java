@@ -17,12 +17,9 @@ package pcc.puppet.guru.collection.ports.api.response;
 
 import io.micronaut.core.annotation.Introspected;
 import java.time.Instant;
-import java.util.Map;
 import lombok.Builder;
 import lombok.Data;
 import lombok.extern.jackson.Jacksonized;
-import pcc.puppet.guru.collection.domain.MessageStatus;
-import pcc.puppet.guru.collection.domain.RecordProcessingTime;
 
 @Data
 @Builder

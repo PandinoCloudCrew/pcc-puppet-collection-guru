@@ -25,7 +25,6 @@ import pcc.puppet.guru.collection.domain.Message;
 import pcc.puppet.guru.collection.domain.MessageType;
 import pcc.puppet.guru.collection.ports.api.request.CollectionGenerateRequest;
 
-
 @Introspected
 @Jacksonized
 @EqualsAndHashCode(callSuper = true)

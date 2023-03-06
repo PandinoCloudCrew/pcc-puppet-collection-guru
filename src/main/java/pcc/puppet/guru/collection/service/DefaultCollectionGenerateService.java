@@ -30,9 +30,13 @@ public class DefaultCollectionGenerateService implements CollectionGenerateServi
 
   private final CollectionGenerateProducer collectionGenerateProducer;
 
-  public CollectionGenerateResponse generateCollection(String requester, CollectionGenerateRequest createRequest) {
+  public CollectionGenerateResponse generateCollection(
+      String requester, CollectionGenerateRequest createRequest) {
     String collectionId = Xid.string();
-    CollectionGenerateCommand.builder().data(createRequest).owner(requester).collectionId(collectionId);
+    CollectionGenerateCommand.builder()
+        .data(createRequest)
+        .owner(requester)
+        .collectionId(collectionId);
     return CollectionGenerateResponse.builder()
         .id(collectionId)
         .owner(requester)

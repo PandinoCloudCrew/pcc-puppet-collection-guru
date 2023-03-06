@@ -21,6 +21,7 @@ public class Project {
   public static final String VERSION = "@VERSION@";
   public static final String NAME = "@NAME@";
   public static final String SCHEMAS = "@SCHEMAS@";
+
   public static String schema(String name, String version) {
     return String.format("%s/%s?version=%s", SCHEMAS, name, version);
   }
